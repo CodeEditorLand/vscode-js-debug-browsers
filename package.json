@@ -1,12 +1,29 @@
 {
-  "author": "Connor Peet <connor@peet.io>",
+  "name": "@vscode/js-debug-browsers",
+  "version": "1.1.2",
+  "description": "Browser launch and discovery logic used in VS Code's JavaScript Debugger",
+  "homepage": "https://github.com/microsoft/vscode-js-debug-browsers#readme",
   "bugs": {
     "url": "https://github.com/microsoft/vscode-js-debug-browsers/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microsoft/vscode-js-debug-browsers.git"
+  },
+  "license": "MIT",
+  "author": "Connor Peet <connor@peet.io>",
+  "main": "dist/index.js",
+  "scripts": {
+    "compile": "rimraf dist && tsc",
+    "fmt": "prettier --write \"src/**/*.ts\"&& npm run test:lint -- --fix",
+    "prepack": "npm run compile",
+    "test:fmt": "prettier --list-different \"src/**/*.ts\"",
+    "test:unit": "mocha \"dist/**/*.test.js\"",
+    "watch": "rimraf dist && tsc --watch"
   },
   "dependencies": {
     "execa": "4.0.0"
   },
-  "description": "Browser launch and discovery logic used in VS Code's JavaScript Debugger",
   "devDependencies": {
     "@types/chai": "4.3.0",
     "@types/mocha": "9.0.0",
@@ -17,22 +34,5 @@
     "rimraf": "3.0.2",
     "sinon": "12.0.1",
     "typescript": "4.5.4"
-  },
-  "homepage": "https://github.com/microsoft/vscode-js-debug-browsers#readme",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "name": "@vscode/js-debug-browsers",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/microsoft/vscode-js-debug-browsers.git"
-  },
-  "scripts": {
-    "compile": "rimraf dist && tsc",
-    "fmt": "prettier --write \"src/**/*.ts\"&& npm run test:lint -- --fix",
-    "prepack": "npm run compile",
-    "test:fmt": "prettier --list-different \"src/**/*.ts\"",
-    "test:unit": "mocha \"dist/**/*.test.js\"",
-    "watch": "rimraf dist && tsc --watch"
-  },
-  "version": "1.1.2"
+  }
 }
