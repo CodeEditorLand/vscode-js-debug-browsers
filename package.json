@@ -1,57 +1,47 @@
 {
-  "name": "@vscode/js-debug-browsers",
-  "version": "1.1.2",
-  "description": "Browser launch and discovery logic used in VS Code's JavaScript Debugger",
-  "main": "dist/index.js",
-  "scripts": {
-    "prepack": "npm run compile",
-    "compile": "rimraf dist && tsc",
-    "watch": "rimraf dist && tsc --watch",
-    "test": "npm run test:unit && npm run test:lint && npm run test:fmt",
-    "test:unit": "mocha \"dist/**/*.test.js\"",
-    "test:lint": "eslint \"src/**/*.ts\"",
-    "test:fmt": "prettier --list-different \"src/**/*.ts\"",
-    "fmt": "prettier --write \"src/**/*.ts\"&& npm run test:lint -- --fix"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/microsoft/vscode-js-debug-browsers.git"
-  },
-  "keywords": [
-    "vscode",
-    "js-debug",
-    "chrome",
-    "edge"
-  ],
-  "author": "Connor Peet <connor@peet.io>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/microsoft/vscode-js-debug-browsers/issues"
-  },
-  "homepage": "https://github.com/microsoft/vscode-js-debug-browsers#readme",
-  "prettier": {
-    "trailingComma": "all",
-    "singleQuote": true,
-    "printWidth": 100,
-    "tabWidth": 2
-  },
-  "devDependencies": {
-    "@types/chai": "4.3.13",
-    "@types/mocha": "10.0.6",
-    "@types/node": "20.11.30",
-    "@types/sinon": "17.0.3",
-    "@typescript-eslint/eslint-plugin": "7.3.1",
-    "@typescript-eslint/parser": "7.3.1",
-    "chai": "5.1.0",
-    "eslint": "8.57.0",
-    "eslint-plugin-header": "3.1.1",
-    "mocha": "10.3.0",
-    "prettier": "3.2.5",
-    "rimraf": "5.0.5",
-    "sinon": "17.0.1",
-    "typescript": "5.4.2"
-  },
-  "dependencies": {
-    "execa": "8.0.1"
-  }
+	"name": "@vscode/js-debug-browsers",
+	"version": "0.0.1",
+	"private": false,
+	"description": "Browser launch and discovery logic used in VS Code's JavaScript Debugger",
+	"homepage": "https://github.com/CodeEditorLand/Foundation#readme",
+	"bugs": {
+		"url": "https://github.com/CodeEditorLand/Foundation/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/CodeEditorLand/Foundation.git"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "Playform",
+		"email": "Hello@Playform.Cloud",
+		"url": "https://playform.cloud"
+	},
+	"type": "module",
+	"main": "dist/index.js",
+	"scripts": {
+		"compile": "rimraf dist && tsc",
+		"prepack": "npm run compile",
+		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'",
+		"test:unit": "mocha \"dist/**/*.test.js\"",
+		"watch": "rimraf dist && tsc --watch"
+	},
+	"dependencies": {
+		"execa": "8.0.1"
+	},
+	"devDependencies": {
+		"@types/chai": "4.3.13",
+		"@types/mocha": "10.0.6",
+		"@types/node": "20.11.30",
+		"@types/sinon": "17.0.3",
+		"chai": "5.1.0",
+		"mocha": "10.3.0",
+		"rimraf": "5.0.5",
+		"sinon": "17.0.1",
+		"typescript": "5.4.2",
+		"typescript-esbuild": "latest"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
 }
