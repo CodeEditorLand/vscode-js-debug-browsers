@@ -1,16 +1,37 @@
 {
-	"author": {
-		"email": "Land@PlayForm.Cloud",
-		"name": "🌆 — Land —",
-		"url": "HTTPS://Land.PlayForm.Cloud"
-	},
+	"name": "@vscode/js-debug-browsers",
+	"version": "0.0.1",
+	"private": false,
+	"description": "Browser launch and discovery logic used in VS Code's JavaScript Debugger",
+	"keywords": [
+		"land"
+	],
+	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandJSDebugBrowsers#readme",
 	"bugs": {
 		"url": "HTTPS://GitHub.Com/CodeEditorLand/LandJSDebugBrowsers/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+HTTPS://github.com/CodeEditorLand/LandJSDebugBrowsers.git"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "🌆 — Land —",
+		"email": "Land@PlayForm.Cloud",
+		"url": "HTTPS://Land.PlayForm.Cloud"
+	},
+	"type": "module",
+	"main": "dist/index.js",
+	"scripts": {
+		"Document": "Document 'Source/**/*.ts'",
+		"compile": "rimraf dist && tsc",
+		"prepack": "npm run compile",
+		"prepublishOnly": "Build 'Source/**/*.ts'",
+		"test:unit": "mocha \"dist/**/*.test.js\""
 	},
 	"dependencies": {
 		"execa": "8.0.1"
 	},
-	"description": "Browser launch and discovery logic used in VS Code's JavaScript Debugger",
 	"devDependencies": {
 		"@playform/build": "0.0.7",
 		"@playform/document": "0.0.6",
@@ -21,28 +42,7 @@
 		"rimraf": "5.0.5",
 		"sinon": "17.0.1"
 	},
-	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandJSDebugBrowsers#readme",
-	"keywords": [
-		"land"
-	],
-	"license": "SEE LICENSE IN LICENSE",
-	"main": "dist/index.js",
-	"name": "@vscode/js-debug-browsers",
-	"private": false,
 	"publishConfig": {
 		"access": "public"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+HTTPS://github.com/CodeEditorLand/LandJSDebugBrowsers.git"
-	},
-	"scripts": {
-		"Document": "Document 'Source/**/*.ts'",
-		"compile": "rimraf dist && tsc",
-		"prepack": "npm run compile",
-		"prepublishOnly": "Build 'Source/**/*.ts'",
-		"test:unit": "mocha \"dist/**/*.test.js\""
-	},
-	"type": "module",
-	"version": "0.0.1"
+	}
 }
