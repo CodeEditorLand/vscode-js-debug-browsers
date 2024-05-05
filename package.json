@@ -3,43 +3,44 @@
 	"version": "0.0.1",
 	"private": false,
 	"description": "Browser launch and discovery logic used in VS Code's JavaScript Debugger",
-	"homepage": "https://github.com/CodeEditorLand/Foundation#readme",
+	"keywords": [
+		"land"
+	],
+	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandJSDebugBrowsers#readme",
 	"bugs": {
-		"url": "https://github.com/CodeEditorLand/Foundation/issues"
+		"url": "HTTPS://GitHub.Com/CodeEditorLand/LandJSDebugBrowsers/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/CodeEditorLand/Foundation.git"
+		"url": "git+HTTPS://github.com/CodeEditorLand/LandJSDebugBrowsers.git"
 	},
 	"license": "SEE LICENSE IN LICENSE",
 	"author": {
-		"name": "Playform",
-		"email": "Hello@Playform.Cloud",
-		"url": "https://playform.cloud"
+		"name": "🌆 — Land —",
+		"email": "Land@PlayForm.Cloud",
+		"url": "HTTPS://Land.PlayForm.Cloud"
 	},
 	"type": "module",
 	"main": "dist/index.js",
 	"scripts": {
+		"Document": "Document 'Source/**/*.ts'",
 		"compile": "rimraf dist && tsc",
 		"prepack": "npm run compile",
-		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'",
-		"test:unit": "mocha \"dist/**/*.test.js\"",
-		"watch": "rimraf dist && tsc --watch"
+		"prepublishOnly": "Build 'Source/**/*.ts'",
+		"test:unit": "mocha \"dist/**/*.test.js\""
 	},
 	"dependencies": {
 		"execa": "8.0.1"
 	},
 	"devDependencies": {
-		"@types/chai": "4.3.13",
-		"@types/mocha": "10.0.6",
-		"@types/node": "20.11.30",
+		"@playform/build": "0.0.7",
+		"@playform/document": "0.0.6",
+		"@types/chai": "4.3.14",
+		"@types/node": "20.12.7",
 		"@types/sinon": "17.0.3",
 		"chai": "5.1.0",
-		"mocha": "10.3.0",
 		"rimraf": "5.0.5",
-		"sinon": "17.0.1",
-		"typescript": "5.4.2",
-		"typescript-esbuild": "0.4.5"
+		"sinon": "17.0.1"
 	},
 	"publishConfig": {
 		"access": "public"
