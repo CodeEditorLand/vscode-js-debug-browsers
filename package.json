@@ -1,15 +1,15 @@
 {
 	"dependencies": {
-		"execa": "^9.2.0"
+		"execa": "9.2.0"
 	},
 	"description": "Browser launch and discovery logic used in VS Code's JavaScript Debugger",
 	"devDependencies": {
-		"@types/chai": "^4.3.16",
-		"@types/node": "^20.14.2",
-		"@types/sinon": "^17.0.3",
-		"chai": "^5.1.1",
-		"rimraf": "^5.0.7",
-		"sinon": "^18.0.0"
+		"@types/chai": "4.3.16",
+		"@types/node": "20.14.2",
+		"@types/sinon": "17.0.3",
+		"chai": "5.1.1",
+		"rimraf": "5.0.7",
+		"sinon": "18.0.0"
 	},
 	"main": "dist/index.js",
 	"name": "@vscode/js-debug-browsers",
