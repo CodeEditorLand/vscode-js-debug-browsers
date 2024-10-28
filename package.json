@@ -1,11 +1,11 @@
 {
 	"dependencies": {
-		"execa": "9.4.1"
+		"execa": "9.5.0"
 	},
 	"description": "Browser launch and discovery logic used in VS Code's JavaScript Debugger",
 	"devDependencies": {
 		"@types/chai": "5.0.0",
-		"@types/node": "22.7.9",
+		"@types/node": "22.8.1",
 		"@types/sinon": "17.0.3",
 		"chai": "5.1.2",
 		"rimraf": "6.0.1",
