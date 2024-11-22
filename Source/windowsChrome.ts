@@ -23,6 +23,7 @@ export class WindowsChromeBrowserFinder implements IBrowserFinder {
 
 	public async findAll() {
 		const sep = win32.sep;
+
 		const suffixes = [
 			{
 				name: `${sep}Google${sep}Chrome Dev${sep}Application${sep}chrome.exe`,
@@ -47,7 +48,9 @@ export class WindowsChromeBrowserFinder implements IBrowserFinder {
 			this.fs,
 			suffixes,
 		);
+
 		const customChromePath = await preferredChromePath(this.fs, this.env);
+
 		if (customChromePath) {
 			installations.unshift({
 				path: customChromePath,

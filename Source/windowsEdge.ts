@@ -46,7 +46,9 @@ export class WindowsEdgeBrowserFinder implements IBrowserFinder {
 			this.fs,
 			suffixes,
 		);
+
 		const customEdgePath = await preferredEdgePath(this.fs, this.env);
+
 		if (customEdgePath) {
 			installations.unshift({
 				path: customEdgePath,

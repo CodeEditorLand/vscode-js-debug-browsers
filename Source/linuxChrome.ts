@@ -59,7 +59,9 @@ export class LinuxChromeBrowserFinder implements IBrowserFinder {
 
 		// 1. Look into CHROME_PATH env variable
 		const envPath = this.env[this.pathEnvironmentVar];
+
 		const customChromePath = envPath && (await canAccess(this.fs, envPath));
+
 		if (customChromePath) {
 			installations.add(envPath);
 		}
@@ -114,6 +116,7 @@ export class LinuxChromeBrowserFinder implements IBrowserFinder {
 		const chromeExecRegex = `^Exec=/.*/(${this.executablesOnPath.join("|")})-.*`;
 
 		const installations: string[] = [];
+
 		if (await canAccess(this.fs, folder)) {
 			// Output of the grep & print looks like:
 			//    /opt/google/chrome/google-chrome --profile-directory
@@ -122,6 +125,7 @@ export class LinuxChromeBrowserFinder implements IBrowserFinder {
 			// Some systems do not support grep -R so fallback to -r.
 			// See https://github.com/GoogleChrome/chrome-launcher/issues/46 for more context.
 			let execResult: Buffer;
+
 			try {
 				execResult = execSync(
 					`grep -ERI "${chromeExecRegex}" ${folder} | awk -F '=' '{print $2}'`,

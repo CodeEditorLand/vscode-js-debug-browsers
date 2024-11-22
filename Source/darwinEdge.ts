@@ -41,6 +41,7 @@ export class DarwinEdgeBrowserFinder extends DarwinFinderBase {
 		];
 
 		const defaultPaths = ["/Applications/Microsoft Edge.app"];
+
 		const installations = await this.findLaunchRegisteredApps(
 			"Microsoft Edge[A-Za-z ]*.app",
 			defaultPaths,

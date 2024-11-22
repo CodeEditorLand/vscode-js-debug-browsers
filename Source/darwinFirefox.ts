@@ -32,6 +32,7 @@ export class DarwinFirefoxBrowserFinder extends DarwinFinderBase {
 		const suffixes = ["/Contents/MacOS/firefox"];
 
 		const defaultPaths = ["/Applications/Firefox.app"];
+
 		const installations = await this.findLaunchRegisteredApps(
 			"Firefox[A-Za-z ]*.app",
 			defaultPaths,

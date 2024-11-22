@@ -20,6 +20,7 @@ export async function canAccess(
 
 	try {
 		await access(file);
+
 		return true;
 	} catch (e) {
 		return false;
@@ -39,6 +40,7 @@ export function escapeRegexSpecialChars(str: string, except?: string): string {
 		.replace(/[\\\]]/g, "\\$&");
 
 	const r = new RegExp(`[${useRegexChars}]`, "g");
+
 	return str.replace(r, "\\$&");
 }
 
@@ -92,11 +94,13 @@ export function sort(
 	priorities: IPriority[],
 ): IExecutable[] {
 	const defaultPriority = 10;
+
 	return (
 		[...installations]
 			.filter((inst) => !!inst)
 			.map((inst) => {
 				const priority = priorities.find((p) => p.regex.test(inst));
+
 				return priority
 					? {
 							path: inst,
@@ -133,6 +137,7 @@ export async function findWindowsCandidates(
 	].filter((p): p is string => !!p);
 
 	const todo: Promise<IExecutable | undefined>[] = [];
+
 	for (const prefix of prefixes) {
 		for (const suffix of suffixes) {
 			const candidate = win32.join(prefix, suffix.name);

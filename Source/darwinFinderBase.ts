@@ -53,6 +53,7 @@ export abstract class DarwinFinderBase implements IBrowserFinder {
 	 */
 	public findAll(): Promise<IExecutable[]> {
 		this.foundAll ??= this.findAllInner();
+
 		return this.foundAll;
 	}
 
@@ -89,14 +90,17 @@ export abstract class DarwinFinderBase implements IBrowserFinder {
 		].filter((l) => !!l);
 
 		const preferred = this.getPreferredPath();
+
 		if (preferred) {
 			paths.push(preferred);
 		}
 
 		const installations = new Set<string>();
+
 		for (const inst of paths) {
 			for (const suffix of suffixes) {
 				const execPath = posix.join(inst.trim(), suffix);
+
 				try {
 					await this.fs.access(execPath);
 					installations.add(execPath);
@@ -117,7 +121,9 @@ export abstract class DarwinFinderBase implements IBrowserFinder {
 		priorities: { name: string; weight: number; quality: Quality }[],
 	) {
 		const home = this.env.HOME && escapeRegexSpecialChars(this.env.HOME);
+
 		const preferred = this.getPreferredPath();
+
 		const mapped = priorities.reduce(
 			(acc, p) => [
 				...acc,

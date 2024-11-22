@@ -39,10 +39,12 @@ export class DarwinChromeBrowserFinder extends DarwinFinderBase {
 			"/Contents/MacOS/Google Chrome Dev",
 			"/Contents/MacOS/Google Chrome",
 		];
+
 		const defaultPaths = [
 			"/Applications/Google Chrome.app",
 			"/Applications/Google Chrome Canary.app",
 		];
+
 		const installations = await this.findLaunchRegisteredApps(
 			"google chrome[A-Za-z() ]*.app",
 			defaultPaths,

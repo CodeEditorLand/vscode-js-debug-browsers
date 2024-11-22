@@ -23,6 +23,7 @@ export class WindowsFirefoxBrowserFinder implements IBrowserFinder {
 
 	public async findAll() {
 		const sep = win32.sep;
+
 		const suffixes = [
 			{
 				name: `${sep}Firefox Developer Edition${sep}firefox.exe`,
@@ -43,7 +44,9 @@ export class WindowsFirefoxBrowserFinder implements IBrowserFinder {
 			this.fs,
 			suffixes,
 		);
+
 		const customFirefoxPath = await preferredFirefoxPath(this.fs, this.env);
+
 		if (customFirefoxPath) {
 			installations.unshift({
 				path: customFirefoxPath,
