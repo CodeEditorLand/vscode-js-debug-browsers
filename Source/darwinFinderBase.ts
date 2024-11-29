@@ -103,6 +103,7 @@ export abstract class DarwinFinderBase implements IBrowserFinder {
 
 				try {
 					await this.fs.access(execPath);
+
 					installations.add(execPath);
 				} catch (e) {
 					// no access => ignored

@@ -53,6 +53,7 @@ export const isQuality = (input: string): input is Quality =>
  */
 export interface IExecutable {
 	path: string;
+
 	quality: Quality;
 }
 

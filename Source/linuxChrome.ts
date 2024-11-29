@@ -73,6 +73,7 @@ export class LinuxChromeBrowserFinder implements IBrowserFinder {
 			"/usr/bin",
 			"/opt/google", // Chromebook location, vscode #198192
 		];
+
 		desktopInstallationFolders.forEach((folder) => {
 			for (const bin in this.findChromeExecutables(folder)) {
 				installations.add(bin);

@@ -82,7 +82,9 @@ export async function preferredEdgePath(
 
 export interface IPriority {
 	regex: RegExp;
+
 	weight: number;
+
 	quality: Quality;
 }
 
@@ -141,6 +143,7 @@ export async function findWindowsCandidates(
 	for (const prefix of prefixes) {
 		for (const suffix of suffixes) {
 			const candidate = win32.join(prefix, suffix.name);
+
 			todo.push(
 				canAccess(fs, candidate).then((ok) =>
 					ok ? { path: candidate, quality: suffix.type } : undefined,
