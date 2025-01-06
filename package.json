@@ -8,11 +8,11 @@
 		"test:unit": "mocha \"dist/**/*.test.js\""
 	},
 	"dependencies": {
-		"execa": "9.5.1"
+		"execa": "9.5.2"
 	},
 	"devDependencies": {
 		"@types/chai": "5.0.1",
-		"@types/node": "22.10.1",
+		"@types/node": "22.10.5",
 		"@types/sinon": "17.0.3",
 		"chai": "5.1.2",
 		"rimraf": "6.0.1",
